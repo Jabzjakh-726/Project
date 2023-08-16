@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Competitive Exams and Scholarships</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script>
+  function validate() {
+    var input1 = document.myform.name.value;
+    var input2 = document.myform.class.value;
+    var input3 = document.myform.per.value;
+    var reg = /^[A-Za-z\s]*$/;
+
+    if (input1.trim().length === 0) {
+      alert("Enter the name");
+      return false;
+    } else {
+      if (!input1.match(reg)) {
+        alert("Only letters and space allowed in the name");
+        return false;
+      }
+    }
+
+    if (input2 == "0") {
+      alert("Enter the class");
+      return false;
+    }
+
+    if (input3.trim().length === 0) {
+      alert("Enter the previous percentage");
+      return false;
+    } else {
+      var reg1 =/^([0-9]|[1-9][0-9]|100)(\.[0-9]{1,2})?$/;
+      if (!input3.match(reg1)) {
+        alert("Enter a valid percentage (2 to 3 digits)");
+        return false;
+      }
+      return true;
+    }
+  }
+
+  function validateForm(event) {
+    event.preventDefault(); 
+    if (validate() == true) {
+      var input2 = document.myform.class.value;
+      if (input2 == "10") {
+        location.href = "tenth.html";
+      } else if (input2 == "12") {
+        location.href = "tweleve1.html";
+      }
+    }
+  }
+</script>
+<body>
+  <div class="container">
+    <h1>Competitive Exams and Scholarships</h1>
+    <form method="POST" name="myform" onsubmit="validateForm(event)">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name">
+
+      <label for="class">Class:</label>
+      <select id="class" name="class">
+        <option value="0">Select Class</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+      </select>
+
+      <label for="percentage">Previous Class Percentage:</label>
+      <input type="text" id="percentage" name="per">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

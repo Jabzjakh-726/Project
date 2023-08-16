@@ -1,0 +1,56 @@
+
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 20px;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+ 
+  ul ul {
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+  }
+  
+  li li {
+    margin: 8px 0;
+  }
+  
+
+  li:hover ul {
+    display: block;
+  }
+  
+  /* Optional: Style links on hover within sub-menus */
+  li ul li:hover a {
+    color: #009688;
+  }
+  
